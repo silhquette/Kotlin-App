@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">First-App</string>
+    <string name="label_1">Bilangan pertama</string>
+    <string name="placeholder_1">Masukkan bilangan pertama</string>
+    <string name="label_2">Bilangan kedua</string>
+    <string name="placeholder_2">Masukkan bilangan kedua</string>
+    <string name="decide">Decide</string>
+    <string name="hasil_kalkulasi">Hasil Kalkulasi</string>
 </resources>
