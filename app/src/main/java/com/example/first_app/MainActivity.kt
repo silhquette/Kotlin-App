@@ -17,6 +17,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnHome: Button
     private lateinit var tvResult: TextView
 
+    companion object{
+        private const val STATE_RESULT = "state_result"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,7 +33,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         btnProcess.setOnClickListener(this)
         btnHome.setOnClickListener(this)
+
+        if (savedInstanceState != null) {
+            val result = savedInstanceState.getString(STATE_RESULT)
+            tvResult.text = result
+        }
     }
+
 
     override fun onClick(v: View) {
         when (v.id) {
@@ -62,5 +72,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     public fun sum(val1: Int? = 0, val2: Int? = 0): Int? = val2?.let { val1?.plus(it) }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(STATE_RESULT, tvResult.text.toString())
+    }
 }
 

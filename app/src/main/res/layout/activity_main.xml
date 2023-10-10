@@ -61,28 +61,28 @@
         android:layout_marginRight="16dp"
         android:orientation="vertical">
 
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/radio_group">
+<!--        <RadioGroup-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/radio_group">-->
 
-            <RadioButton
-                android:id="@+id/penjumlahan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Penjumlahan" />
-            <RadioButton
-                android:id="@+id/pengurangan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="perkalian" />
-            <RadioButton
-                android:id="@+id/perkalian"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Perkalian" />
+<!--            <RadioButton-->
+<!--                android:id="@+id/penjumlahan"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Penjumlahan" />-->
+<!--            <RadioButton-->
+<!--                android:id="@+id/pengurangan"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="perkalian" />-->
+<!--            <RadioButton-->
+<!--                android:id="@+id/perkalian"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Perkalian" />-->
 
-        </RadioGroup>
+<!--        </RadioGroup>-->
     </LinearLayout>
 
     <Button
