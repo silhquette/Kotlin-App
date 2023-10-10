@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/ed_bilangan1"
+            android:id="@+id/et_bilangan1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/placeholder_1"
@@ -43,7 +43,7 @@
             android:layout_marginTop="16dp" />
 
         <EditText
-            android:id="@+id/ed_bilangan2"
+            android:id="@+id/et_bilangan2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/placeholder_2"
@@ -86,7 +86,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button_process"
+        android:id="@+id/btn_process"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -95,7 +95,7 @@
         tools:ignore="VisualLintButtonSize" />
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/tv_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -104,5 +104,23 @@
         android:text="@string/hasil_kalkulasi"
         android:textAlignment="center"
         android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kembali ke halaman Home"
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/btn_home" />
 
 </LinearLayout>
