@@ -121,6 +121,15 @@
         android:layout_height="wrap_content"
         android:text="Kembali ke halaman Home"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
         android:id="@+id/btn_home" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ke halaman scrollView"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/btn_scroll" />
 
 </LinearLayout>

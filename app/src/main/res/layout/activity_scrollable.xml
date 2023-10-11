@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ScrollableActivity">
+
+        <TextView
+            android:id="@+id/tv_greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="108dp"
+            android:text="hello world!"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            android:ems="10"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:text="Name"
+            app:layout_constraintEnd_toEndOf="@+id/tv_greeting"
+            app:layout_constraintStart_toStartOf="@+id/tv_greeting"
+            app:layout_constraintTop_toBottomOf="@+id/tv_greeting" />
+
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:ems="10"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:text="Name"
+            app:layout_constraintEnd_toEndOf="@+id/editTextText"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/editTextText"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+
+        <EditText
+            android:id="@+id/editTextText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            android:ems="10"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:text="Name"
+            app:layout_constraintEnd_toEndOf="@+id/editTextText2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/editTextText2"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+        <EditText
+            android:id="@+id/editTextText4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            android:ems="10"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:text="Name"
+            app:layout_constraintEnd_toEndOf="@+id/editTextText3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/editTextText3"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+
+        <EditText
+            android:id="@+id/editTextText5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            android:ems="10"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:text="Name"
+            app:layout_constraintEnd_toEndOf="@+id/editTextText4"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/editTextText4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Button"
+            app:layout_constraintEnd_toEndOf="@+id/editTextText5"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@+id/editTextText5"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

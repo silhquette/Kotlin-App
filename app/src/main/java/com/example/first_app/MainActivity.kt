@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var etBilangan2: EditText
     private lateinit var btnProcess: Button
     private lateinit var btnHome: Button
+    private lateinit var btnScroll: Button
     private lateinit var tvResult: TextView
 
     companion object{
@@ -29,10 +30,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         etBilangan2 = findViewById(R.id.et_bilangan2)
         btnProcess = findViewById(R.id.btn_process)
         btnHome = findViewById(R.id.btn_home)
+        btnScroll = findViewById(R.id.btn_scroll)
         tvResult = findViewById(R.id.result)
 
         btnProcess.setOnClickListener(this)
         btnHome.setOnClickListener(this)
+        btnScroll.setOnClickListener(this)
 
         if (savedInstanceState != null) {
             val result = savedInstanceState.getString(STATE_RESULT)
@@ -66,6 +69,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.btn_home -> {
                 val intent = Intent(this@MainActivity, HomeActivity::class.java)
+                startActivity(intent)
+            }
+
+            R.id.btn_scroll -> {
+                val intent = Intent(this@MainActivity, ScrollableActivity::class.java)
                 startActivity(intent)
             }
         }
