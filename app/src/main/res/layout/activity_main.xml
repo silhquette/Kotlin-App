@@ -132,4 +132,12 @@
         android:layout_marginTop="16dp"
         android:id="@+id/btn_scroll" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ke halaman recycle view"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/btn_recycle" />
+
 </LinearLayout>

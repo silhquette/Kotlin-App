@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnProcess: Button
     private lateinit var btnHome: Button
     private lateinit var btnScroll: Button
+    private lateinit var btnRecycle: Button
     private lateinit var tvResult: TextView
 
     companion object{
@@ -31,11 +32,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btnProcess = findViewById(R.id.btn_process)
         btnHome = findViewById(R.id.btn_home)
         btnScroll = findViewById(R.id.btn_scroll)
+        btnRecycle = findViewById(R.id.btn_recycle)
         tvResult = findViewById(R.id.result)
 
         btnProcess.setOnClickListener(this)
         btnHome.setOnClickListener(this)
         btnScroll.setOnClickListener(this)
+        btnRecycle.setOnClickListener(this)
 
         if (savedInstanceState != null) {
             val result = savedInstanceState.getString(STATE_RESULT)
@@ -74,6 +77,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.btn_scroll -> {
                 val intent = Intent(this@MainActivity, ScrollableActivity::class.java)
+                startActivity(intent)
+            }
+
+            R.id.btn_recycle -> {
+                val intent = Intent(this@MainActivity, RecycleViewActivity::class.java)
                 startActivity(intent)
             }
         }
