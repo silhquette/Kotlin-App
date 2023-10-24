@@ -9,15 +9,11 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import com.example.first_app.databinding.ActivityMainBinding
+
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     // Register Component
-    private lateinit var etBilangan1: EditText
-    private lateinit var etBilangan2: EditText
-    private lateinit var btnProcess: Button
-    private lateinit var btnHome: Button
-    private lateinit var btnScroll: Button
-    private lateinit var btnRecycle: Button
-    private lateinit var tvResult: TextView
+    private lateinit var binding : ActivityMainBinding
 
     companion object{
         private const val STATE_RESULT = "state_result"
@@ -25,24 +21,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        etBilangan1 = findViewById(R.id.et_bilangan1)
-        etBilangan2 = findViewById(R.id.et_bilangan2)
-        btnProcess = findViewById(R.id.btn_process)
-        btnHome = findViewById(R.id.btn_home)
-        btnScroll = findViewById(R.id.btn_scroll)
-        btnRecycle = findViewById(R.id.btn_recycle)
-        tvResult = findViewById(R.id.result)
-
-        btnProcess.setOnClickListener(this)
-        btnHome.setOnClickListener(this)
-        btnScroll.setOnClickListener(this)
-        btnRecycle.setOnClickListener(this)
+        binding.btnProcess.setOnClickListener(this)
+        binding.btnHome.setOnClickListener(this)
+        binding.btnScroll.setOnClickListener(this)
+        binding.btnRecycle.setOnClickListener(this)
 
         if (savedInstanceState != null) {
             val result = savedInstanceState.getString(STATE_RESULT)
-            tvResult.text = result
+            binding.tvResult.text = result
         }
     }
 
@@ -53,20 +42,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 var isEmpty = false
                 var value1: Int?
                 var value2: Int?
-                value1 = etBilangan1.text.toString().toIntOrNull()
-                value2 = etBilangan2.text.toString().toIntOrNull()
+                value1 = binding.etBilangan1.text.toString().toIntOrNull()
+                value2 = binding.etBilangan2.text.toString().toIntOrNull()
 
                 //error fields
                 if (value1 == null) {
                     isEmpty = true
-                    etBilangan1.error = "field ini tidak boleh kososng"
+                    binding.etBilangan1.error = "field ini tidak boleh kososng"
                 } else if (value2 == null) {
                     isEmpty = true
-                    etBilangan2.error = "field ini tidak boleh kososng"
+                    binding.etBilangan2.error = "field ini tidak boleh kososng"
                 }
 
                 if (!isEmpty) {
-                    tvResult.text =sum(value1, value2).toString()
+                    binding.tvResult.text =sum(value1, value2).toString()
                 }
             }
 
@@ -91,7 +80,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putString(STATE_RESULT, tvResult.text.toString())
+        outState.putString(STATE_RESULT, binding.tvResult.text.toString())
     }
 }
 

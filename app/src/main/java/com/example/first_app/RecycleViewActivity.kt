@@ -1,20 +1,26 @@
 package com.example.first_app
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.first_app.databinding.ActivityRecycleViewBinding
 
-class RecycleViewActivity : AppCompatActivity() {
-    private lateinit var newRecyclerView: RecyclerView
+class RecycleViewActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var newArrayList: ArrayList<Spots>
+    private lateinit var spotadapter: SpotAdapter
     lateinit var cardImage: Array<Int>
     lateinit var cardTitle: Array<String>
     lateinit var cardBody: Array<String>
     lateinit var cardDistance: Array<String>
+    private lateinit var binding: ActivityRecycleViewBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recycle_view)
+
+        binding = ActivityRecycleViewBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         cardImage = arrayOf(
             R.drawable.a,
@@ -60,12 +66,23 @@ class RecycleViewActivity : AppCompatActivity() {
             "Distance - 400KM",
         )
 
-        newRecyclerView = findViewById(R.id.recyvlerView)
-        newRecyclerView.layoutManager = LinearLayoutManager(this)
-        newRecyclerView.setHasFixedSize(true)
+        binding.recyvlerView.layoutManager = LinearLayoutManager(this)
+        binding.recyvlerView.setHasFixedSize(true)
 
         newArrayList = arrayListOf<Spots>()
         getUserData()
+
+        // clickable items
+        spotadapter = SpotAdapter(newArrayList)
+        binding.recyvlerView.adapter = spotadapter
+        spotadapter.onItemClick = {
+            val intent = Intent(this, SpotDetailActivity::class.java)
+            intent.putExtra("extra_spot", Spots(this.cardImage[0], this.cardBody[0], this.cardTitle[0], this.cardDistance[0]))
+            startActivity(intent)
+        }
+
+        // intent implementation
+        binding.btnSearch.setOnClickListener(this)
     }
 
     private fun getUserData() {
@@ -73,7 +90,21 @@ class RecycleViewActivity : AppCompatActivity() {
             val spots = Spots(cardImage[i], cardTitle[i], cardBody[i], cardDistance[i])
             newArrayList.add(spots)
         }
-        newRecyclerView.adapter = SpotAdapter(newArrayList)
 
+
+    }
+
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.btn_search -> {
+                val intent = Intent(this@RecycleViewActivity, GetDataActivity::class.java)
+                if (binding.etSearch.text.isNotEmpty()) {
+                    intent.putExtra("extra_keyword", binding.etSearch.text.toString())
+                    startActivity(intent)
+                } else {
+                    binding.etSearch.error = "field ini tidak boleh kososng"
+                }
+            }
+        }
     }
 }
