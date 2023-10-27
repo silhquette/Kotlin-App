@@ -96,6 +96,8 @@ class RecycleViewActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         when (v.id) {
+
+            // button search - pass data with intent
             R.id.btn_search -> {
                 val intent = Intent(this@RecycleViewActivity, GetDataActivity::class.java)
                 if (binding.etSearch.text.isNotEmpty()) {

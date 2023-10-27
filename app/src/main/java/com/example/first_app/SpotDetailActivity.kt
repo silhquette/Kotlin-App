@@ -20,7 +20,10 @@ class SpotDetailActivity : AppCompatActivity() {
             @Suppress("DEPRECATION")
             intent.getParcelableExtra<Spots>("extra_spot")
         }
+
         binding.tvTitle.text = spot?.cardBody ?: "belum diatur"
         binding.tvAddress.text = spot?.cardTitle ?: "belum diatur"
+
+
     }
 }
