@@ -2,8 +2,11 @@ package com.example.first_app
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.first_app.databinding.ActivityRecycleViewBinding
@@ -75,14 +78,16 @@ class RecycleViewActivity : AppCompatActivity(), View.OnClickListener {
         // clickable items
         spotadapter = SpotAdapter(newArrayList)
         binding.recyvlerView.adapter = spotadapter
-        spotadapter.onItemClick = {
-            val intent = Intent(this, SpotDetailActivity::class.java)
-            intent.putExtra("extra_spot", Spots(this.cardImage[0], this.cardBody[0], this.cardTitle[0], this.cardDistance[0]))
-            startActivity(intent)
-        }
+        spotadapter.setOnItemClick(object : SpotAdapter.OnItemClick {
+            override fun onItemClicked(data: Spots) {
+                showSelectedSpot(data)
+            }
+
+        })
 
         // intent implementation
         binding.btnSearch.setOnClickListener(this)
+
     }
 
     private fun getUserData() {
@@ -108,5 +113,28 @@ class RecycleViewActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         }
+    }
+
+    private fun showSelectedSpot(spots: Spots) {
+        val intent = Intent(this, SpotDetailActivity::class.java)
+        intent.putExtra("extra_spot", spots)
+        startActivity(intent)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_spots, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_grid -> {
+                binding.recyvlerView.layoutManager = GridLayoutManager(this, 2)
+            }
+            R.id.action_list -> {
+                binding.recyvlerView.layoutManager = LinearLayoutManager(this)
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

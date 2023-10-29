@@ -7,10 +7,9 @@
     tools:context=".GetDataActivity">
 
     <TextView
+        style="@style/PageTitle"
         android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="64dp"
         android:text="Page Pencarian"
         android:textSize="24sp"
         android:textStyle="bold"

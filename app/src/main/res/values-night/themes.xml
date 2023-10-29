@@ -1,7 +1,26 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.FirstApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary Brand Color -->
+        <item name="colorPrimary">#888888</item>
+        <item name="colorOnPrimary">#131313</item>
+        <!-- Secondary Brand Color -->
+        <item name="colorOnSecondary">#445867</item>
+        <item name="colorSecondary">#131313</item>
+        <!-- Accent -->
+        <item name="colorAccent">@color/white</item>
+    </style>
+
+    <!-- Action bar application theme. -->
+    <style name="Action.Theme.FirstApp" parent="Theme.Material3.DayNight">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Primary Brand Color -->
+        <item name="colorPrimary">#888888</item>
+        <item name="colorOnPrimary">#131313</item>
+        <!-- Secondary Brand Color -->
+        <item name="colorOnSecondary">#445867</item>
+        <item name="colorSecondary">#131313</item>
+        <!-- Accent -->
+        <item name="colorAccent">@color/white</item>
     </style>
 </resources>

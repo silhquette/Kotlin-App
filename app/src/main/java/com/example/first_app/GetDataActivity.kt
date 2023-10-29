@@ -2,6 +2,7 @@ package com.example.first_app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.example.first_app.databinding.ActivityGetDataBinding
 
@@ -14,6 +15,7 @@ class GetDataActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         binding.btnBack.setOnClickListener(this)
+        Log.d("asd", intent.getStringExtra("extra_keyword").toString())
         binding.tvSubTitle.text = "Hasil pencarian untuk " + intent.getStringExtra("extra_keyword")
     }
 

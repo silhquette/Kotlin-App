@@ -8,6 +8,12 @@ import com.example.first_app.databinding.ActivityPaymentBinding
 
 class PaymentActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityPaymentBinding
+
+    companion object{
+        const val EXTRA_SELECTED_VALUE = "extra_selected_value"
+        const val RESULT_CODE = 110
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -15,6 +21,7 @@ class PaymentActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         binding.radioGroup.setOnClickListener(this)
+        binding.btnSelect.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -28,8 +35,8 @@ class PaymentActivity : AppCompatActivity(), View.OnClickListener {
                     else -> value = 0
                 }
 
-                val resultIntent = Intent().putExtra("extra_selected_value", value)
-                setResult(110, resultIntent)
+                val resultIntent = Intent().putExtra(EXTRA_SELECTED_VALUE, value)
+                setResult(RESULT_CODE, resultIntent)
                 finish()
             }
         }

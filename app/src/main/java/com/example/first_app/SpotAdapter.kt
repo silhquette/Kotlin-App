@@ -8,7 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 
 class SpotAdapter(private val spotList: ArrayList<Spots>) : RecyclerView.Adapter<SpotAdapter.SpotViewHolder>() {
-    var onItemClick: ((Spots) -> Unit)? = null
+    private lateinit var onItemClick: OnItemClick
+
+    fun setOnItemClick(onItemClick: OnItemClick) {
+        this.onItemClick = onItemClick
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpotViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.card_item, parent, false)
         return SpotViewHolder(itemView)
@@ -23,7 +27,7 @@ class SpotAdapter(private val spotList: ArrayList<Spots>) : RecyclerView.Adapter
         holder.cardDistance.text = currentItem.cardDistance
 
         holder.itemView.setOnClickListener{
-            onItemClick?.invoke(currentItem)
+            onItemClick.onItemClicked(spotList[holder.adapterPosition])
         }
     }
 
@@ -38,4 +42,9 @@ class SpotAdapter(private val spotList: ArrayList<Spots>) : RecyclerView.Adapter
         val cardDistance: TextView = itemView.findViewById(R.id.card_distance)
     }
 
+
+    interface OnItemClick {
+        fun onItemClicked(data: Spots)
+    }
 }
+

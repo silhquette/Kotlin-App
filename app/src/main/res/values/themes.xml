@@ -2,14 +2,29 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.FirstApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Pribary Brand Color -->
+        <item name="colorPrimary">#445867</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <!-- Secondary Brand Color -->
+        <item name="colorOnSecondary">#5E5E5E</item>
+        <item name="colorSecondary">#131313</item>
+    </style>
+
+    <!-- Action bar application theme. -->
+    <style name="Action.Theme.FirstApp" parent="Theme.Material3.DayNight">
+        <!-- Customize your light theme here. -->
+        <!-- Pribary Brand Color -->
+        <item name="colorPrimary">#445867</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <!-- Secondary Brand Color -->
+        <item name="colorOnSecondary">#5E5E5E</item>
+        <item name="colorSecondary">#131313</item>
     </style>
 
     <style name="Theme.FirstApp" parent="Base.Theme.FirstApp" />
 
     <style name="Theme.FirstApp.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item><item name="windowNoTitle">true</item>
     </style>
 
     <style name="Theme.FirstApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -20,6 +35,13 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12dp</item>
         <item name="color">#2C6553</item>
+    </style>
+
+    <style name="PageTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#03A9F4</item>
+        <item name="android:typeface">monospace</item>
     </style>
 
 </resources>

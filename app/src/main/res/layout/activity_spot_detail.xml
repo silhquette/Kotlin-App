@@ -18,13 +18,15 @@
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="nama tempat"
-        android:textSize="20sp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="nama tempat"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -53,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_address" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_pembayaran"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
@@ -62,7 +64,8 @@
         android:text="Pilih metode pembayaran"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pembayaran" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_pembayaran"
+        style="@style/Base.Theme.FirstApp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
